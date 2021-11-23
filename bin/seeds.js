@@ -4,8 +4,10 @@
 const mongoose 		= require("mongoose")
 const Book			= require("./../models/Book")
 
+require("dotenv").config()
+
 // 2. CONEXIÓN A BD
-mongoose.connect("mongodb+srv://mikenieva:Holamundo2021@cluster0.4i0wu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 })
